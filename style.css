@@ -1,0 +1,160 @@
+/** General css - STARTS **/
+
+@font-face {
+  font-family: 'ABC Favorit';
+  src: url('assets/fonts/ABC-favorit/ABCFavoritMono-Book.otf')
+    format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('assets/fonts/helvetica-neue/Helvetica-Neue-Regular.otf')
+    format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #f8f6f5;
+  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.container {
+  max-width: 1282px !important;
+}
+
+/** General css - ENDS **/
+
+/** Hearder - STARTS **/
+header .container {
+  border-bottom: 1px solid #181716;
+}
+
+.header__nav {
+  margin-left: auto;
+}
+
+.header__nav-list {
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-end;
+}
+/** Hearder - ENDS **/
+
+/** Main Banner - STARTS **/
+.banner__title {
+  font-family: 'ABC Favorit';
+}
+
+.banner__title {
+  font-size: 48px;
+  color: #181716;
+}
+
+.banner__title em {
+  font-style: normal;
+  color: #d1581f;
+  display: block;
+}
+
+.banner__subtitle {
+  font-size: 24px;
+  color: #181716;
+}
+
+.banner__media-content img {
+  max-width: 100%;
+}
+
+/** Main Banner - ENDS **/
+
+/** Brands Section - STARTS **/
+.splide__slide img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.splide__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/** Brands Section - ENDS **/
+
+/** Guide Content Section - STARTS **/
+.guide__description {
+  /* font-family: 'Helvetica Neue'; */
+  font-size: 18px;
+}
+
+/** Guide Content Section - ENDS **/
+
+/** Authors Section - STARTS **/
+.authors {
+  background-color: #453930;
+  color: #fff;
+}
+
+.authors__title {
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.authors__name {
+  font-family: 'ABC Favorit';
+  font-size: 30px;
+}
+
+.authors__bio {
+  font-size: 16px;
+  line-height: 22.4px;
+}
+/** Authors Section - ENDS **/
+
+/** Trial Demo Section - STARTS **/
+.demo__title {
+  font-family: 'ABC Favorit';
+  font-size: 48px;
+  text-align: center;
+  line-height: 57.6px;
+}
+
+.demo__title em {
+  font-style: normal;
+  color: #d1581f;
+}
+
+.demo__disclaimer {
+  text-align: center;
+  font-size: 16px;
+  color: #000;
+  opacity: 0.75;
+  line-height: 19.52px;
+}
+/** Trial Demo Section - ENDS **/
+
+/** Footer - STARTS **/
+footer {
+  background-color: #453930;
+}
+
+.footer__company-info {
+  margin-left: auto;
+}
+
+.footer__logo-container {
+  align-self: center;
+}
+
+.footer__company-info address,
+.footer__copyright {
+  color: #fff;
+  font-size: 18px;
+  line-height: 24.12px;
+  margin-bottom: 0;
+  opacity: 0.6;
+}
+/** Footer - ENDS **/

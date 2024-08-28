@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finaloop</title>
+
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="header__logo-container col-xs-6 col-md-3">
+          <img src="assets/images/logo-dark.svg"/>
+        </div>
+
+        <nav class="header__nav col-xs-6 col-md-4">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Pricing</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Get Started</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox__content">
+      <div id="hubspot-form-container"></div>
+    </div>
+  </div>
+
+  <main class="main">
+    <section class="banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="banner__text-content">
+              <h1 class="banner__title">
+                <em>Profit Unlocked:</em>
+                Your Guide to Ecommerce Accounting for DTC & Shopify Businesses
+              </h1>
+              <p class="banner__subtitle">We like to call it “Your Guide for Profit in 2024.” Grab every template, definition, and tip as a single PDF below.</p>
+
+              <button class="banner__cta-button">Get Full Guide</button>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="banner__media-content">
+              <img src="assets/images/banner-1.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="brands" aria-label="Brands Carousel">
+        <div id="splide" class="splide">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide"><img src="assets/images/brand-1.png" alt="Brand 1"></li>
+              <li class="splide__slide"><img src="assets/images/brand-2.png" alt="Brand 2"></li>
+              <li class="splide__slide"><img src="assets/images/brand-3.png" alt="Brand 3"></li>
+              <li class="splide__slide"><img src="assets/images/brand-4.png" alt="Brand 4"></li>
+              <li class="splide__slide"><img src="assets/images/brand-5.png" alt="Brand 5"></li>
+              <li class="splide__slide"><img src="assets/images/brand-6.png" alt="Brand 6"></li>
+              <li class="splide__slide"><img src="assets/images/brand-7.png" alt="Brand 7"></li>
+              <li class="splide__slide"><img src="assets/images/brand-8.png" alt="Brand 8"></li>
+              <li class="splide__slide"><img src="assets/images/brand-9.png" alt="Brand 9"></li>
+            </ul>
+          </div>
+        </div>
+    </section>
+
+    <section class="guide">
+      <div class="container">
+        <div class="row">
+          <header class="guide__header col-xs-12">
+            <h2 class="guide__title">What's Inside:</h2>
+          </header>
+
+          <article class="guide__item col-xs-12 col-md-4">
+            <div class="guide__icon-container">
+              <img src="assets/images/icon-crown.svg" />
+            </div>
+            <h2 class="guide__title">Accounting for Ecommerce Businesses</h2>
+            <p class="guide__description">Understand the basics of ecommerce accounting, methods, and financial statements & reports.</p>
+          </article>
+
+          <article class="guide__item col-xs-12 col-md-4">
+            <div class="guide__icon-container">
+              <img src="assets/images/icon-laptop.svg" />
+            </div>
+            <h2 class="guide__title">Bookkeeping & Ecommerce Accounting Tasks</h2>
+            <p class="guide__description">The art of setting the right data as a foundation for the purpose of making profitable decisions.</p>
+          </article>
+
+          <article class="guide__item col-xs-12 col-md-4">
+            <div class="guide__icon-container">
+              <img src="assets/images/icon-shopify.svg" />
+            </div>
+            <h2 class="guide__title">Ecommerce Accounting Software for Shopify</h2>
+            <p class="guide__description">Identify the best accounting software for your ecommerce business based on your size, budget, and the level of integrations required.​​</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="authors">
+      <div class="container">
+        <div class="row">
+          <header class="authors__header col-xs-12 col-md-3">
+            <h2 class="authors__title">About the authors:</h2>
+          </header>
+
+          <article class="authors__author col-xs-12 col-md-4">
+            <figure class="authors__image-container">
+              <img src="assets/images/author-rayla-rappaport.png"/>
+            </figure>
+            <h3 class="authors__name">Rayla Rappaport</h3>
+            <p class="authors__bio">Rayla is a Certified Public Accountant who spent more than 13 years with PwC before joining Finaloop back in 2021, where she now leads Product Marketing.
+              Over that period she enhanced her deep understanding of accounting with ecommerce expertise by working directly with hundreds of DTC and B2B brands.
+            </p>
+          </article>
+
+          <article class="authors__author col-xs-12 col-md-4">
+            <figure class="authors__image-container">
+              <img src="assets/images/author-aaron-orendorff.png">
+            </figure>
+            <h3 class="authors__name">Aaron Orendorff</h3>
+            <p class="authors__bio">Previously Editor-in-Chief at Shopify Plus & VP of Marketing at Common Thread Collective, Aaron's knowledge of the DTC space and what makes brand operators tick is second to none.
+              You can join the +35K users who follow him on X and see for yourself.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="demo__title">Get ecommerce accounting software <em>that never slows you down</em></h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="demo__animation-content">
+              <!-- Animation or image content goes here -->
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="demo__ctas">
+              <button class="demo__cta demo__cta--solid">Start Free Trial</button>
+              <button class="demo__cta demo__cta--transparent">Book a demo</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p class="demo__disclaimer">14 days free. No credit card required</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer__logo-container col-md-6">
+          <img src="assets/images/logo-light.svg"/>
+        </div>
+
+        <div class="footer__company-info col-md-2">
+          <address class="footer__address">
+            Finaloop, Inc.<br>
+            38 6th Ave<br>
+            Brooklyn, NY, 11217
+          </address>
+
+          <p class="footer__copyright">
+            Ⓒ All Rights Reserved
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Splide JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
