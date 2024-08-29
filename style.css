@@ -72,9 +72,6 @@ header .container {
 
 .banner__title {
   font-family: 'ABC Favorit';
-}
-
-.banner__title {
   font-size: 48px;
   color: #181716;
   letter-spacing: -2px;
@@ -305,7 +302,7 @@ footer {
 }
 /** Footer - ENDS **/
 
-/* Lightbox styles */
+/** Lightbox - STARTS **/
 .lightbox {
   position: fixed;
   top: 0;
@@ -324,8 +321,10 @@ footer {
   padding: 20px;
   border-radius: 5px;
   position: relative;
-  max-width: 500px;
-  width: 100%;
+  width: auto;
+  max-width: 80vw;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .lightbox__close {
@@ -337,3 +336,41 @@ footer {
   font-size: 24px;
   cursor: pointer;
 }
+
+.hs-button {
+  background-color: #d1581f;
+}
+
+#hubspot-form-container form input {
+  width: 100%;
+  border: none;
+  border: 1px solid #808080;
+  outline: none;
+  padding: 17px 15px;
+  border-radius: 5px;
+}
+
+.hubspot-content__banner img {
+  max-width: 100%;
+  max-height: 30vh;
+  margin: 0 auto;
+  display: block;
+}
+
+.hubspot-content__header h3 {
+  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 30px;
+  color: #181716;
+  line-height: 42px;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.hubspot-content__header h3 em {
+  font-style: normal;
+  color: #d1581f;
+  display: inline-block;
+  letter-spacing: 0;
+}
+/** Lightbox - ENDS **/

@@ -20,6 +20,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }).mount();
   };
 
+  const styleHubspotForm = () => {
+    const formContainer = document.getElementById('hubspot-form-container');
+
+    const interval = setInterval(() => {
+      const form = formContainer.querySelector('form'),
+        lightboxContent = document
+          .querySelector('#hubspot-content')
+          .cloneNode(true);
+
+      if (form) {
+        console.log('form loaded', form);
+        let formParent = form.parentElement;
+        lightboxContent.style.opacity = '1';
+        lightboxContent.style.height = 'auto';
+
+        formParent.insertAdjacentElement('afterbegin', lightboxContent);
+
+        clearInterval(interval);
+      }
+    }, 100);
+  };
+
   const initHubspotForm = () => {
     const openLightbox = document.getElementById('open-lightbox');
     const lightbox = document.getElementById('lightbox');
@@ -33,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
         portalId: '20191864',
         formId: 'e6f4dd61-1393-40c6-8a82-2dd87f364232',
         target: '#hubspot-form-container',
+        onFormReady: styleHubspotForm, // Call the style function once the form is ready
       });
     });
 
