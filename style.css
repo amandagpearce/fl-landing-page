@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('assets/fonts/helvetica-neue/Helvetica-Neue-Regular.otf')
+  src: url('assets/fonts/helvetica-neue/HelveticaNeueRoman.otf')
     format('opentype');
   font-weight: normal;
   font-style: normal;
@@ -30,20 +30,46 @@ body {
 /** Hearder - STARTS **/
 header .container {
   border-bottom: 1px solid #181716;
+  padding: 20px 0;
 }
 
 .header__nav {
   margin-left: auto;
+  align-self: center;
 }
 
 .header__nav-list {
   display: flex;
   list-style-type: none;
   justify-content: flex-end;
+  margin-bottom: 0;
+}
+
+.header__nav-link {
+  color: #181716;
+  text-decoration: none;
+  font-size: 21px;
+  line-height: 25.62px;
+}
+
+.header__nav-link.--solid {
+  color: #fff;
+  background-color: #d1581f;
+  padding: 12px 24px;
+  border-radius: 30px;
+}
+
+.header__nav-item:last-of-type {
+  margin-left: 35px;
 }
 /** Hearder - ENDS **/
 
 /** Main Banner - STARTS **/
+.banner {
+  padding-top: 114px;
+  padding-bottom: 63px;
+}
+
 .banner__title {
   font-family: 'ABC Favorit';
 }
@@ -51,26 +77,70 @@ header .container {
 .banner__title {
   font-size: 48px;
   color: #181716;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
 }
 
 .banner__title em {
   font-style: normal;
   color: #d1581f;
   display: block;
+  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 0;
 }
 
 .banner__subtitle {
   font-size: 24px;
   color: #181716;
+  letter-spacing: -1.5px;
+  line-height: 28.8px;
+  margin-bottom: 40px;
 }
 
 .banner__media-content img {
   max-width: 100%;
 }
 
+.banner__cta-button {
+  color: #fff;
+  background-color: #d1581f;
+  padding: 18px 36px;
+  border-radius: 30px;
+  line-height: 24.4px;
+  font-size: 20px;
+  outline: none;
+  border: none;
+}
+
 /** Main Banner - ENDS **/
 
 /** Brands Section - STARTS **/
+.brands__separator {
+  height: 1px;
+  display: block;
+  background-color: #181716;
+}
+
+.brands__separator.brands__separator--top {
+  margin-bottom: 37px;
+}
+
+.brands__separator.brands__separator--bottom {
+  margin-top: 52px;
+}
+
+.brands__header {
+  text-align: center;
+}
+
+.brands__title {
+  font-family: 'ABC Favorit';
+  font-size: 36px;
+  letter-spacing: -2px;
+  margin-bottom: 42px;
+  letter-spacing: -3px;
+}
+
 .splide__slide img {
   max-width: 100%;
   margin: 0 auto;
@@ -85,9 +155,40 @@ header .container {
 /** Brands Section - ENDS **/
 
 /** Guide Content Section - STARTS **/
+.guide {
+  padding-bottom: 70px;
+}
+
+.guide .guide__header {
+  margin-top: 96px;
+  margin-bottom: 45px;
+}
+
+.guide__section-title {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 52.8px;
+  letter-spacing: -2px;
+}
+
+.guide__icon-container {
+  margin-bottom: 33px;
+}
+
 .guide__description {
-  /* font-family: 'Helvetica Neue'; */
+  font-family: 'Helvetica Neue';
   font-size: 18px;
+  color: #181716;
+  line-height: 21.47px;
+}
+
+.guide__title {
+  font-family: 'ABC Favorit';
+  font-size: 36px;
+  color: #181716;
+  line-height: 43.2px;
+  letter-spacing: -2px;
+  margin-bottom: 37px;
 }
 
 /** Guide Content Section - ENDS **/
@@ -96,30 +197,43 @@ header .container {
 .authors {
   background-color: #453930;
   color: #fff;
+  padding-top: 70px;
+  padding-bottom: 53px;
 }
 
 .authors__title {
   font-size: 48px;
   font-weight: 400;
+  line-height: 48px;
 }
 
 .authors__name {
   font-family: 'ABC Favorit';
   font-size: 30px;
+  letter-spacing: -1px;
 }
 
 .authors__bio {
   font-size: 16px;
   line-height: 22.4px;
+  max-width: 430px;
 }
 /** Authors Section - ENDS **/
 
 /** Trial Demo Section - STARTS **/
+.demo {
+  padding-top: 76px;
+  padding-bottom: 21px;
+}
+
 .demo__title {
   font-family: 'ABC Favorit';
   font-size: 48px;
   text-align: center;
   line-height: 57.6px;
+  max-width: 885px;
+  letter-spacing: -2px;
+  margin: 0 auto;
 }
 
 .demo__title em {
@@ -131,30 +245,95 @@ header .container {
   text-align: center;
   font-size: 16px;
   color: #000;
-  opacity: 0.75;
+  opacity: 0.8;
   line-height: 19.52px;
+  font-family: 'Helvetica Neue';
+}
+
+.demo__ctas {
+  margin: 0 auto;
+  display: table;
+  margin-bottom: 16px;
+  margin-top: 20px;
+}
+
+.demo__cta {
+  padding: 18px 38px;
+  border-radius: 30px;
+  line-height: 24.4px;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.demo__cta--solid {
+  color: #fff;
+  outline: none;
+  border: none;
+  background-color: #d1581f;
+  margin-right: 15px;
+}
+
+.demo__cta--transparent {
+  border: 1px solid #181716;
+  color: #181716;
+  background-color: #fff;
+}
+
+.demo img {
+  margin-top: -25px;
 }
 /** Trial Demo Section - ENDS **/
 
 /** Footer - STARTS **/
 footer {
   background-color: #453930;
+  padding-top: 48px;
+  padding-bottom: 50px;
 }
 
 .footer__company-info {
   margin-left: auto;
 }
 
-.footer__logo-container {
-  align-self: center;
-}
-
 .footer__company-info address,
 .footer__copyright {
   color: #fff;
   font-size: 18px;
-  line-height: 24.12px;
+  line-height: 26.12px;
   margin-bottom: 0;
   opacity: 0.6;
 }
 /** Footer - ENDS **/
+
+/* Lightbox styles */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox__content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}

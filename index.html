@@ -25,7 +25,7 @@
               <a href="#" class="header__nav-link">Pricing</a>
             </li>
             <li class="header__nav-item">
-              <a href="#" class="header__nav-link">Get Started</a>
+              <a href="#" class="header__nav-link --solid">Get Started</a>
             </li>
           </ul>
         </nav>
@@ -35,15 +35,17 @@
 
   <div id="lightbox" class="lightbox">
     <div class="lightbox__content">
+      <button class="lightbox__close">&times;</button>
       <div id="hubspot-form-container"></div>
     </div>
   </div>
+
 
   <main class="main">
     <section class="banner">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-6">
             <div class="banner__text-content">
               <h1 class="banner__title">
                 <em>Profit Unlocked:</em>
@@ -51,10 +53,10 @@
               </h1>
               <p class="banner__subtitle">We like to call it “Your Guide for Profit in 2024.” Grab every template, definition, and tip as a single PDF below.</p>
 
-              <button class="banner__cta-button">Get Full Guide</button>
+              <button class="banner__cta-button" id="open-lightbox">Get Full Guide</button>
             </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-md-6">
             <div class="banner__media-content">
               <img src="assets/images/banner-1.png" />
             </div>
@@ -64,6 +66,14 @@
     </section>
 
     <section class="brands" aria-label="Brands Carousel">
+      <div class="container">
+        <div class="row"><span class="brands__separator brands__separator--top"></span></div>
+      </div>
+
+      <header class="brands__header col-xs-12">
+        <h2 class="brands__title">Trusted by thousands of consumer brands</h2>
+      </header>
+
         <div id="splide" class="splide">
           <div class="splide__track">
             <ul class="splide__list">
@@ -79,13 +89,17 @@
             </ul>
           </div>
         </div>
+
+        <div class="container">
+          <div class="row"><span class="brands__separator brands__separator--bottom"></span></div>
+        </div>
     </section>
 
     <section class="guide">
       <div class="container">
         <div class="row">
           <header class="guide__header col-xs-12">
-            <h2 class="guide__title">What's Inside:</h2>
+            <h2 class="guide__section-title">What's Inside:</h2>
           </header>
 
           <article class="guide__item col-xs-12 col-md-4">
@@ -122,23 +136,27 @@
             <h2 class="authors__title">About the authors:</h2>
           </header>
 
-          <article class="authors__author col-xs-12 col-md-4">
-            <figure class="authors__image-container">
-              <img src="assets/images/author-rayla-rappaport.png"/>
-            </figure>
-            <h3 class="authors__name">Rayla Rappaport</h3>
-            <p class="authors__bio">Rayla is a Certified Public Accountant who spent more than 13 years with PwC before joining Finaloop back in 2021, where she now leads Product Marketing.
-              Over that period she enhanced her deep understanding of accounting with ecommerce expertise by working directly with hundreds of DTC and B2B brands.
-            </p>
+          <article class="authors__author col-xs-12 col-md d-flex">
+            <div class="flex-grow-1">
+              <figure class="authors__image-container">
+                <img src="assets/images/author-rayla-rappaport.png"/>
+              </figure>
+              <h3 class="authors__name">Rayla Rappaport</h3>
+              <p class="authors__bio">Rayla is a Certified Public Accountant who spent more than 13 years with PwC before joining Finaloop back in 2021, where she now leads Product Marketing.
+                Over that period she enhanced her deep understanding of accounting with ecommerce expertise by working directly with hundreds of DTC and B2B brands.
+              </p>
+            </div>
           </article>
 
-          <article class="authors__author col-xs-12 col-md-4">
-            <figure class="authors__image-container">
-              <img src="assets/images/author-aaron-orendorff.png">
-            </figure>
-            <h3 class="authors__name">Aaron Orendorff</h3>
-            <p class="authors__bio">Previously Editor-in-Chief at Shopify Plus & VP of Marketing at Common Thread Collective, Aaron's knowledge of the DTC space and what makes brand operators tick is second to none.
-              You can join the +35K users who follow him on X and see for yourself.</p>
+          <article class="authors__author col-xs-12 col-md d-flex">
+            <div class="flex-grow-1">
+              <figure class="authors__image-container">
+                <img src="assets/images/author-aaron-orendorff.png">
+              </figure>
+              <h3 class="authors__name">Aaron Orendorff</h3>
+              <p class="authors__bio">Previously Editor-in-Chief at Shopify Plus & VP of Marketing at Common Thread Collective, Aaron's knowledge of the DTC space and what makes brand operators tick is second to none.
+                You can join the +35K users who follow him on X and see for yourself.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -154,10 +172,10 @@
         <div class="row">
           <div class="col-md-6">
             <div class="demo__animation-content">
-              <!-- Animation or image content goes here -->
+              <img src="assets/images/reports.svg" alt="Reports">
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-xs-12">
             <div class="demo__ctas">
               <button class="demo__cta demo__cta--solid">Start Free Trial</button>
               <button class="demo__cta demo__cta--transparent">Book a demo</button>
@@ -195,6 +213,8 @@
     </div>
   </footer>
 
+  <!-- HubSpot Form -->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Splide JS -->
