@@ -1,18 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
-  document.body.style.overflowX = 'hidden';
-
   const isViewportMobile = () => {
     var viewportWidth = window.innerWidth;
-    return viewportWidth < 768; // Simplified return statement
+    return viewportWidth < 768;
   };
 
   const isMobile = isViewportMobile();
 
+  new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true,
+    multiplier: 2.5,
+  });
+
   const initBrandsSlider = () => {
     new Splide('#splide', {
       type: 'loop',
-      perPage: 8,
-      gap: '1rem',
+      perPage: 7,
+      autoplay: true,
+      gap: '2rem',
       speed: 200000,
       interval: 0,
       pagination: false,
@@ -32,12 +37,12 @@ document.addEventListener('DOMContentLoaded', function () {
     new Splide('#guide-slider', {
       type: 'loop',
       perPage: 1,
-      pagination: true, // Show pagination
-      arrows: false, // Hide arrows
+      pagination: true,
+      arrows: false,
       breakpoints: {
         768: {
           perPage: 1,
-          pagination: true, // Pagination enabled for small screens
+          pagination: true,
         },
       },
     }).mount();
@@ -53,12 +58,12 @@ document.addEventListener('DOMContentLoaded', function () {
           .cloneNode(true);
 
       if (form) {
-        console.log('form loaded', form);
         let formParent = form.parentElement;
         lightboxContent.style.opacity = '1';
         lightboxContent.style.height = 'auto';
 
         formParent.insertAdjacentElement('afterbegin', lightboxContent);
+        lightbox.style.display = 'flex';
 
         clearInterval(interval);
       }
@@ -74,14 +79,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (openLightbox) {
       openLightbox.addEventListener('click', function () {
-        lightbox.style.display = 'flex';
-
         hbspt.forms.create({
           region: 'na1',
           portalId: '20191864',
           formId: 'e6f4dd61-1393-40c6-8a82-2dd87f364232',
           target: '#hubspot-form-container',
-          onFormReady: styleHubspotForm, // Call the style function once the form is ready
+          onFormReady: styleHubspotForm,
         });
       });
     }
@@ -103,8 +106,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   initBrandsSlider();
 
-  if (!!isMobile) {
-    initGuideSlider();
+  if (isMobile != undefined) {
     initHubspotForm(isMobile);
+
+    if (isMobile) {
+      initGuideSlider();
+    }
   }
 });

@@ -9,23 +9,26 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
 </head>
 <body>
+  <div data-scroll-container>
   <header class="header">
     <div class="container">
       <div class="row">
         <div class="header__logo-container col-5 col-md-3">
-          <img src="assets/images/logo-dark.svg"/>
+          <a href="https://www.finaloop.com/" target="_blank">
+            <img src="assets/images/logo-dark.svg"/>
+          </a>
         </div>
 
         <nav class="header__nav col-6 col-md-5">
           <ul class="header__nav-list">
             <li class="header__nav-item d-none d-md-block">
-              <a href="#" class="header__nav-link">Pricing</a>
+              <a href="https://www.finaloop.com/pricing" target="_blank" class="header__nav-link">Pricing</a>
             </li>
             <li class="header__nav-item">
-              <a href="#" class="header__nav-link --solid">Get Started</a>
+              <a href="https://home.finaloop.com/signup" target="_blank" class="header__nav-link --solid">Get Started</a>
             </li>
           </ul>
         </nav>
@@ -70,7 +73,7 @@
             </div>
           </div>
           <div class="col-md-7 col-lg-6">
-            <div class="banner__media-content">
+            <div class="banner__media-content" data-scroll data-scroll-offset="50%" data-scroll-speed="2">
               <img src="assets/images/banner-1.png" />
             </div>
 
@@ -95,15 +98,15 @@
         <div id="splide" class="splide">
           <div class="splide__track">
             <ul class="splide__list">
-              <li class="splide__slide"><img src="assets/images/brand-1.png" alt="Brand 1"></li>
-              <li class="splide__slide"><img src="assets/images/brand-2.png" alt="Brand 2"></li>
-              <li class="splide__slide"><img src="assets/images/brand-3.png" alt="Brand 3"></li>
-              <li class="splide__slide"><img src="assets/images/brand-4.png" alt="Brand 4"></li>
-              <li class="splide__slide"><img src="assets/images/brand-5.png" alt="Brand 5"></li>
-              <li class="splide__slide"><img src="assets/images/brand-6.png" alt="Brand 6"></li>
-              <li class="splide__slide"><img src="assets/images/brand-7.png" alt="Brand 7"></li>
-              <li class="splide__slide"><img src="assets/images/brand-8.png" alt="Brand 8"></li>
-              <li class="splide__slide"><img src="assets/images/brand-9.png" alt="Brand 9"></li>
+              <li class="splide__slide"><img data-scroll src="assets/images/brand-1.png" alt="Brand 1"></li>
+              <li class="splide__slide"><img data-scroll src="assets/images/brand-2.png" alt="Brand 2"></li>
+              <li class="splide__slide"><img data-scroll src="assets/images/brand-3.png" alt="Brand 3"></li>
+              <li class="splide__slide"><img data-scroll src="assets/images/brand-4.png" alt="Brand 4"></li>
+              <li class="splide__slide"><img data-scroll src="assets/images/brand-5.png" alt="Brand 5"></li>
+              <li class="splide__slide"><img data-scroll src="assets/images/brand-6.png" alt="Brand 6"></li>
+              <li class="splide__slide"><img data-scroll src="assets/images/brand-7.png" alt="Brand 7"></li>
+              <li class="splide__slide"><img data-scroll src="assets/images/brand-8.png" alt="Brand 8"></li>
+              <li class="splide__slide"><img data-scroll src="assets/images/brand-9.png" alt="Brand 9"></li>
             </ul>
           </div>
         </div>
@@ -120,7 +123,7 @@
             <h2 class="guide__section-title">What's Inside:</h2>
           </header>
 
-          <article class="guide__item col-xs-12 col-md-4 d-none d-md-block">
+          <article class="guide__item col-xs-12 col-md-4 d-none d-md-block" data-scroll data-scroll-speed="2">
             <div class="guide__icon-container">
               <img src="assets/images/icon-crown.svg" />
             </div>
@@ -128,7 +131,7 @@
             <p class="guide__description">Understand the basics of ecommerce accounting, methods, and financial statements & reports.</p>
           </article>
 
-          <article class="guide__item col-xs-12 col-md-4 d-none d-md-block">
+          <article class="guide__item col-xs-12 col-md-4 d-none d-md-block" data-scroll data-scroll-speed="2">
             <div class="guide__icon-container">
               <img src="assets/images/icon-laptop.svg" />
             </div>
@@ -136,7 +139,7 @@
             <p class="guide__description">The art of setting the right data as a foundation for the purpose of making profitable decisions.</p>
           </article>
 
-          <article class="guide__item col-xs-12 col-md-4 d-none d-md-block">
+          <article class="guide__item col-xs-12 col-md-4 d-none d-md-block" data-scroll data-scroll-speed="2">
             <div class="guide__icon-container">
               <img src="assets/images/icon-shopify.svg" />
             </div>
@@ -224,7 +227,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-xs-12">
             <div class="demo__image">
               <img src="assets/images/reports.svg " alt="Reports" class="d-none d-md-block">
               <img src="assets/images/reports_mobile.png " alt="Reports" class="d-md-none">
@@ -250,7 +253,9 @@
     <div class="container">
       <div class="row">
         <div class="footer__logo-container col-md-6">
-          <img src="assets/images/logo-light.svg"/>
+          <a href="https://www.finaloop.com/" target="_blank">
+            <img src="assets/images/logo-light.svg"/>
+          </a>
         </div>
 
         <div class="footer__company-info col-md-4 col-lg-2">
@@ -274,7 +279,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Splide JS -->
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
+  <!-- Locomotive Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <!-- Custom JS -->
   <script src="js/script.js"></script>
+</div>
 </body>
 </html>

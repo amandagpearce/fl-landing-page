@@ -235,6 +235,12 @@ header .container {
 .splide__slide img {
   max-width: 100%;
   margin: 0 auto;
+  opacity: 0;
+  transition: opacity 3s ease-out;
+}
+
+[data-scroll].is-inview .splide__slide img {
+  opacity: 1;
 }
 
 .splide__slide {
@@ -662,3 +668,14 @@ footer {
   letter-spacing: 0;
 }
 /** Lightbox - ENDS **/
+
+[data-scroll] {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-scroll].is-inview {
+  opacity: 1;
+  transform: translateY(0);
+}
