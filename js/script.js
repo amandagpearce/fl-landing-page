@@ -1,10 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
+  document.body.style.overflowX = 'hidden';
+
+  const isViewportMobile = () => {
+    var viewportWidth = window.innerWidth;
+    return viewportWidth < 768; // Simplified return statement
+  };
+
+  const isMobile = isViewportMobile();
+
   const initBrandsSlider = () => {
     new Splide('#splide', {
       type: 'loop',
       perPage: 8,
       gap: '1rem',
-      // autoplay: true,
       speed: 200000,
       interval: 0,
       pagination: false,
@@ -15,6 +23,21 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         480: {
           perPage: 1,
+        },
+      },
+    }).mount();
+  };
+
+  const initGuideSlider = () => {
+    new Splide('#guide-slider', {
+      type: 'loop',
+      perPage: 1,
+      pagination: true, // Show pagination
+      arrows: false, // Hide arrows
+      breakpoints: {
+        768: {
+          perPage: 1,
+          pagination: true, // Pagination enabled for small screens
         },
       },
     }).mount();
@@ -42,34 +65,46 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 100);
   };
 
-  const initHubspotForm = () => {
-    const openLightbox = document.getElementById('open-lightbox');
+  const initHubspotForm = (isMobile) => {
+    const openLightbox = isMobile
+      ? document.getElementById('open-lightbox-mobile')
+      : document.getElementById('open-lightbox');
     const lightbox = document.getElementById('lightbox');
     const closeLightbox = document.querySelector('.lightbox__close');
 
-    openLightbox.addEventListener('click', function () {
-      lightbox.style.display = 'flex';
+    if (openLightbox) {
+      openLightbox.addEventListener('click', function () {
+        lightbox.style.display = 'flex';
 
-      hbspt.forms.create({
-        region: 'na1',
-        portalId: '20191864',
-        formId: 'e6f4dd61-1393-40c6-8a82-2dd87f364232',
-        target: '#hubspot-form-container',
-        onFormReady: styleHubspotForm, // Call the style function once the form is ready
+        hbspt.forms.create({
+          region: 'na1',
+          portalId: '20191864',
+          formId: 'e6f4dd61-1393-40c6-8a82-2dd87f364232',
+          target: '#hubspot-form-container',
+          onFormReady: styleHubspotForm, // Call the style function once the form is ready
+        });
       });
-    });
+    }
 
-    closeLightbox.addEventListener('click', function () {
-      lightbox.style.display = 'none';
-    });
-
-    lightbox.addEventListener('click', function (e) {
-      if (e.target === lightbox) {
+    if (closeLightbox) {
+      closeLightbox.addEventListener('click', function () {
         lightbox.style.display = 'none';
-      }
-    });
+      });
+    }
+
+    if (lightbox) {
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) {
+          lightbox.style.display = 'none';
+        }
+      });
+    }
   };
 
   initBrandsSlider();
-  initHubspotForm();
+
+  if (!!isMobile) {
+    initGuideSlider();
+    initHubspotForm(isMobile);
+  }
 });

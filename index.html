@@ -15,13 +15,13 @@
   <header class="header">
     <div class="container">
       <div class="row">
-        <div class="header__logo-container col-xs-6 col-md-3">
+        <div class="header__logo-container col-5 col-md-3">
           <img src="assets/images/logo-dark.svg"/>
         </div>
 
-        <nav class="header__nav col-xs-6 col-md-4">
+        <nav class="header__nav col-6 col-md-4">
           <ul class="header__nav-list">
-            <li class="header__nav-item">
+            <li class="header__nav-item d-none d-md-block">
               <a href="#" class="header__nav-link">Pricing</a>
             </li>
             <li class="header__nav-item">
@@ -33,7 +33,7 @@
     </div>
   </header>
 
-  <div id="hubspot-content" style="opacity: 0;height: 0;">
+  <div id="hubspot-content" style="opacity: 0;height: 0;overflow: hidden;">
     <div class="hubspot-content__banner col-xs-12">
       <img src="assets/images/lightbox-banner.png" />
     </div>
@@ -64,14 +64,19 @@
                 <em>Profit Unlocked:</em>
                 Your Guide to Ecommerce Accounting for DTC & Shopify Businesses
               </h1>
-              <p class="banner__subtitle">We like to call it “Your Guide for Profit in 2024.” Grab every template, definition, and tip as a single PDF below.</p>
+              <p class="banner__subtitle d-none d-md-block">We like to call it “Your Guide for Profit in 2024.” Grab every template, definition, and tip as a single PDF below.</p>
 
-              <button class="banner__cta-button" id="open-lightbox">Get Full Guide</button>
+              <button class="banner__cta-button d-none d-md-block" id="open-lightbox">Get Full Guide</button>
             </div>
           </div>
           <div class="col-md-6">
             <div class="banner__media-content">
               <img src="assets/images/banner-1.png" />
+            </div>
+
+            <div class="banner__text-content--mobile">
+              <p class="banner__subtitle d-md-none">We like to call it “Your Guide for Profit in 2024.” Grab every template, definition, and tip as a single PDF below.</p>
+              <button class="banner__cta-button d-md-none" id="open-lightbox-mobile">Get Full Guide</button>
             </div>
           </div>
         </div>
@@ -115,7 +120,7 @@
             <h2 class="guide__section-title">What's Inside:</h2>
           </header>
 
-          <article class="guide__item col-xs-12 col-md-4">
+          <article class="guide__item col-xs-12 col-md-4 d-none d-lg-block">
             <div class="guide__icon-container">
               <img src="assets/images/icon-crown.svg" />
             </div>
@@ -123,7 +128,7 @@
             <p class="guide__description">Understand the basics of ecommerce accounting, methods, and financial statements & reports.</p>
           </article>
 
-          <article class="guide__item col-xs-12 col-md-4">
+          <article class="guide__item col-xs-12 col-md-4 d-none d-lg-block">
             <div class="guide__icon-container">
               <img src="assets/images/icon-laptop.svg" />
             </div>
@@ -131,13 +136,49 @@
             <p class="guide__description">The art of setting the right data as a foundation for the purpose of making profitable decisions.</p>
           </article>
 
-          <article class="guide__item col-xs-12 col-md-4">
+          <article class="guide__item col-xs-12 col-md-4 d-none d-lg-block">
             <div class="guide__icon-container">
               <img src="assets/images/icon-shopify.svg" />
             </div>
             <h2 class="guide__title">Ecommerce Accounting Software for Shopify</h2>
             <p class="guide__description">Identify the best accounting software for your ecommerce business based on your size, budget, and the level of integrations required.​​</p>
           </article>
+
+          <!-- Slider Container -->
+          <div id="guide-slider" class="splide d-lg-none">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <article class="guide__item">
+                    <div class="guide__icon-container">
+                      <img src="assets/images/icon-crown.svg" />
+                    </div>
+                    <h2 class="guide__title">Accounting for Ecommerce Businesses</h2>
+                    <p class="guide__description">Understand the basics of ecommerce accounting, methods, and financial statements & reports.</p>
+                  </article>
+                </li>
+                <li class="splide__slide">
+                  <article class="guide__item">
+                    <div class="guide__icon-container">
+                      <img src="assets/images/icon-laptop.svg" />
+                    </div>
+                    <h2 class="guide__title">Bookkeeping & Ecommerce Accounting Tasks</h2>
+                    <p class="guide__description">The art of setting the right data as a foundation for the purpose of making profitable decisions.</p>
+                  </article>
+                </li>
+                <li class="splide__slide">
+                  <article class="guide__item">
+                    <div class="guide__icon-container">
+                      <img src="assets/images/icon-shopify.svg" />
+                    </div>
+                    <h2 class="guide__title">Ecommerce Accounting Software for Shopify</h2>
+                    <p class="guide__description">Identify the best accounting software for your ecommerce business based on your size, budget, and the level of integrations required.​​</p>
+                  </article>
+                </li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -168,7 +209,7 @@
               </figure>
               <h3 class="authors__name">Aaron Orendorff</h3>
               <p class="authors__bio">Previously Editor-in-Chief at Shopify Plus & VP of Marketing at Common Thread Collective, Aaron's knowledge of the DTC space and what makes brand operators tick is second to none.
-                You can join the +35K users who follow him on X and see for yourself.</p>
+                You can <a href="https://x.com/AaronOrendorff?mx=2" target="_blank">join</a> the +35K users who follow him on X and see for yourself.</p>
             </div>
           </article>
         </div>
@@ -184,8 +225,9 @@
         </div>
         <div class="row">
           <div class="col-md-6">
-            <div class="demo__animation-content">
-              <img src="assets/images/reports.svg" alt="Reports">
+            <div class="demo__image">
+              <img src="assets/images/reports.svg " alt="Reports" class="d-none d-lg-block">
+              <img src="assets/images/reports_mobile.png " alt="Reports" class="d-lg-none">
             </div>
           </div>
           <div class="col-xs-12">

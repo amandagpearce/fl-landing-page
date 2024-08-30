@@ -16,6 +16,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Helvetica Neue Thin';
+  src: url('assets/fonts/helvetica-neue/HelveticaNeueThin.otf')
+    format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background-color: #f8f6f5;
   font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
@@ -23,6 +31,11 @@ body {
 
 .container {
   max-width: 1282px !important;
+}
+
+body,
+html {
+  overflow-x: hidden !important;
 }
 
 /** General css - ENDS **/
@@ -39,6 +52,10 @@ header .container {
 }
 
 .header__nav-list {
+  padding-left: 0;
+}
+
+.header__nav-list {
   display: flex;
   list-style-type: none;
   justify-content: flex-end;
@@ -48,20 +65,43 @@ header .container {
 .header__nav-link {
   color: #181716;
   text-decoration: none;
-  font-size: 21px;
-  line-height: 25.62px;
+  font-size: 20px;
 }
 
 .header__nav-link.--solid {
   color: #fff;
   background-color: #d1581f;
-  padding: 12px 24px;
+  padding: 10px 24px 13px;
   border-radius: 30px;
 }
 
 .header__nav-item:last-of-type {
   margin-left: 35px;
 }
+
+@media (max-width: 767.98px) {
+  header .container {
+    padding: 26px 0;
+  }
+
+  .header .row {
+    margin: 0;
+  }
+
+  .header__logo-container img {
+    max-width: 102px;
+  }
+
+  .header__nav-item:last-of-type {
+    margin-left: 0;
+    font-family: 'Helvetica Neue Thin';
+  }
+
+  .header__nav-link.--solid {
+    padding: 14px 25px;
+  }
+}
+
 /** Hearder - ENDS **/
 
 /** Main Banner - STARTS **/
@@ -109,6 +149,43 @@ header .container {
   border: none;
 }
 
+@media (max-width: 767.98px) {
+  .banner {
+    padding-top: 61px;
+    padding-bottom: 135px;
+  }
+
+  .banner__title {
+    font-size: 28px;
+    font-family: 'Helvetica Neue';
+    letter-spacing: -1.5px;
+  }
+
+  .banner__media-content img {
+    max-width: 313px;
+    margin: 0 auto;
+    display: table;
+  }
+
+  .banner__subtitle {
+    font-size: 18px;
+    color: #000;
+    letter-spacing: -1px;
+    font-weight: 500;
+    line-height: 25.2px;
+    margin-top: 28px;
+  }
+
+  .banner__cta-button {
+    width: 100%;
+    max-width: 333px;
+    margin: 0 auto;
+    display: table;
+    padding: 22.5px 36px;
+    font-size: 24px;
+    border-radius: 40px;
+  }
+}
 /** Main Banner - ENDS **/
 
 /** Brands Section - STARTS **/
@@ -147,6 +224,30 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 767.98px) {
+  .brands__title {
+    margin-bottom: 86px;
+  }
+
+  .brands__separator.brands__separator--top {
+    max-width: 88%;
+    margin: 0 auto 30px;
+  }
+
+  .brands__separator.brands__separator--bottom {
+    max-width: 88%;
+    margin: 52px auto 0;
+  }
+
+  .brands__title {
+    font-size: 21px;
+    letter-spacing: -2px;
+    max-width: 80%;
+    text-align: left;
+    margin-left: 10%;
+  }
 }
 
 /** Brands Section - ENDS **/
@@ -188,6 +289,61 @@ header .container {
   margin-bottom: 37px;
 }
 
+@media (max-width: 767.98px) {
+  .guide {
+    padding-bottom: 109px;
+  }
+
+  .guide .guide__header {
+    margin-top: 54px;
+    margin-bottom: 38px;
+  }
+
+  .guide__section-title {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .guide__icon-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .guide__title {
+    text-align: center;
+    font-size: 36px;
+    line-height: 43.2px;
+    font-family: 'Helvetica Neue';
+    letter-spacing: -1px;
+    max-width: 90%;
+    margin: 0 auto 27px;
+  }
+
+  .guide__description {
+    text-align: center;
+  }
+
+  .guide .splide__pagination {
+    bottom: -1.2em;
+  }
+
+  .guide .splide__pagination__page,
+  .guide .splide__pagination__page.is-active {
+    background: #9a8a7e;
+    transform: scale(2);
+    opacity: 0.5;
+    margin: 0 11px;
+  }
+
+  .guide .splide__pagination__page.is-active {
+    opacity: 1;
+  }
+
+  .guide__icon-container {
+    margin-bottom: 47px;
+  }
+}
+
 /** Guide Content Section - ENDS **/
 
 /** Authors Section - STARTS **/
@@ -214,6 +370,49 @@ header .container {
   font-size: 16px;
   line-height: 22.4px;
   max-width: 430px;
+}
+
+.authors__bio a {
+  color: #fff;
+}
+
+@media (max-width: 767.98px) {
+  .authors {
+    background-color: #453830;
+    padding-bottom: 6px;
+  }
+
+  .authors__title {
+    font-size: 36px;
+    text-align: center;
+    max-width: 80%;
+    line-height: 36px;
+    margin: 0 auto 64px;
+  }
+
+  .authors__image-container {
+    margin-bottom: 57px;
+  }
+
+  .authors__author {
+    margin-bottom: 62px;
+  }
+
+  .authors__image-container img {
+    max-width: 200px;
+    margin: 0 auto;
+    display: table;
+  }
+
+  .authors__name,
+  .authors__bio {
+    text-align: center;
+  }
+
+  .authors__bio {
+    max-width: 84%;
+    margin: 0 auto;
+  }
 }
 /** Authors Section - ENDS **/
 
@@ -278,6 +477,48 @@ header .container {
 
 .demo img {
   margin-top: -25px;
+  max-width: 100%;
+}
+
+@media (max-width: 767.98px) {
+  .demo {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+  .demo__title {
+    font-size: 36px;
+    line-height: 43.2px;
+  }
+
+  .demo__title em {
+    display: block;
+  }
+
+  .demo img {
+    margin-top: 0;
+  }
+
+  .demo__ctas {
+    justify-content: center;
+  }
+
+  .demo__cta {
+    font-family: 'Helvetica Neue Thin';
+    display: block;
+    max-height: 60px;
+    padding: 18px 31.5px;
+  }
+
+  .demo__cta--solid {
+    margin-right: 0;
+    margin-bottom: 17px;
+  }
+
+  .demo__image img {
+    margin-bottom: 11px;
+    margin-top: 27px;
+  }
 }
 /** Trial Demo Section - ENDS **/
 
@@ -300,6 +541,30 @@ footer {
   margin-bottom: 0;
   opacity: 0.6;
 }
+
+@media (max-width: 767.98px) {
+  footer .footer__logo-container,
+  footer .footer__company-info {
+    padding-left: 16%;
+  }
+
+  footer .footer__logo-container {
+    margin-bottom: 21px;
+  }
+
+  .footer__company-info address {
+    font-family: 'Helvetica Neue Thin';
+    line-height: 27.2px;
+    font-size: 18px;
+    letter-spacing: 0.75px;
+  }
+
+  .footer__copyright {
+    font-family: 'Helvetica Neue Thin';
+    margin-top: 20px;
+  }
+}
+
 /** Footer - ENDS **/
 
 /** Lightbox - STARTS **/
@@ -322,7 +587,7 @@ footer {
   border-radius: 5px;
   position: relative;
   width: auto;
-  max-width: 80vw;
+  max-width: 809px;
   max-height: 90vh;
   overflow-y: auto;
 }
