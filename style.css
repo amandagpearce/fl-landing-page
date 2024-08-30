@@ -38,6 +38,13 @@ html {
   overflow-x: hidden !important;
 }
 
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  body .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 /** General css - ENDS **/
 
 /** Hearder - STARTS **/
@@ -184,6 +191,16 @@ header .container {
     padding: 22.5px 36px;
     font-size: 24px;
     border-radius: 40px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .banner {
+    padding-top: 50px;
+  }
+
+  .banner__title {
+    font-size: 32px;
   }
 }
 /** Main Banner - ENDS **/
@@ -412,6 +429,12 @@ header .container {
   .authors__bio {
     max-width: 84%;
     margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .authors__header {
+    margin-bottom: 50px;
   }
 }
 /** Authors Section - ENDS **/
