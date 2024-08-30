@@ -6,11 +6,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const isMobile = isViewportMobile();
 
-  new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-    smooth: true,
-    multiplier: 2.5,
-  });
+  setTimeout(() => {
+    // TODO replace it with logic to check if all images were loaded
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      multiplier: 2.5,
+      getDirection: true,
+      reloadOnContextChange: true,
+      lerp: 0.1,
+    });
+  }, 1000);
 
   const initBrandsSlider = () => {
     new Splide('#splide', {
@@ -24,10 +30,10 @@ document.addEventListener('DOMContentLoaded', function () {
       arrows: false,
       breakpoints: {
         768: {
-          perPage: 2,
+          perPage: 6,
         },
         480: {
-          perPage: 1,
+          perPage: 3,
         },
       },
     }).mount();
@@ -113,4 +119,8 @@ document.addEventListener('DOMContentLoaded', function () {
       initGuideSlider();
     }
   }
+});
+
+window.addEventListener('load', () => {
+  scroll.update();
 });

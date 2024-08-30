@@ -232,14 +232,13 @@ header .container {
   letter-spacing: -3px;
 }
 
-.splide__slide img {
+.brands .splide__slide img {
   max-width: 100%;
   margin: 0 auto;
-  opacity: 0;
-  transition: opacity 3s ease-out;
+  transition: opacity 1s ease-in;
 }
 
-[data-scroll].is-inview .splide__slide img {
+.brands.splide__slide img[data-scroll].is-inview {
   opacity: 1;
 }
 
