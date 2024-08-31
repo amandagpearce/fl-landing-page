@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
       getDirection: true,
       reloadOnContextChange: true,
       lerp: 0.1,
+      smoothMobile: true,
     });
   }, 1000);
 
@@ -64,7 +65,26 @@ document.addEventListener('DOMContentLoaded', function () {
           .cloneNode(true);
 
       if (form) {
-        let formParent = form.parentElement;
+        let formParent = form.parentElement,
+          formSubmitButton = form.querySelector('input[type="submit"]'),
+          emailInput = form.querySelector('input[name="email"'),
+          phoneInput = form.querySelector('input[name="mobilephone"]');
+
+        if (formSubmitButton) {
+          formSubmitButton.value = 'Get your full guide';
+        }
+
+        if (emailInput) {
+          emailInput.setAttribute(
+            'placeholder',
+            'Work email (name@company.com)*'
+          );
+        }
+
+        if (phoneInput) {
+          phoneInput.setAttribute('placeholder', 'Phone');
+        }
+
         lightboxContent.style.opacity = '1';
         lightboxContent.style.height = 'auto';
 
@@ -81,7 +101,6 @@ document.addEventListener('DOMContentLoaded', function () {
       ? document.getElementById('open-lightbox-mobile')
       : document.getElementById('open-lightbox');
     const lightbox = document.getElementById('lightbox');
-    const closeLightbox = document.querySelector('.lightbox__close');
 
     if (openLightbox) {
       openLightbox.addEventListener('click', function () {
@@ -92,12 +111,6 @@ document.addEventListener('DOMContentLoaded', function () {
           target: '#hubspot-form-container',
           onFormReady: styleHubspotForm,
         });
-      });
-    }
-
-    if (closeLightbox) {
-      closeLightbox.addEventListener('click', function () {
-        lightbox.style.display = 'none';
       });
     }
 
@@ -119,8 +132,4 @@ document.addEventListener('DOMContentLoaded', function () {
       initGuideSlider();
     }
   }
-});
-
-window.addEventListener('load', () => {
-  scroll.update();
 });

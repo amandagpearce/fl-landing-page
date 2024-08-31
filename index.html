@@ -12,6 +12,13 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
 </head>
 <body>
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox__content">
+      <div id="hubspot-form-container">
+      </div>
+    </div>
+  </div>
+
   <div data-scroll-container>
   <header class="header">
     <div class="container">
@@ -36,7 +43,7 @@
     </div>
   </header>
 
-  <div id="hubspot-content" style="opacity: 0;height: 0;overflow: hidden;">
+  <div id="hubspot-content" style="opacity: 0;height: 0;overflow: hidden;" data-scroll data-scroll-sticky>
     <div class="hubspot-content__banner col-xs-12">
       <img src="assets/images/lightbox-banner.png" />
     </div>
@@ -46,14 +53,6 @@
         <em>Profit Unlocked:</em>
         Your Guide to Ecommerce Accounting for DTC & Shopify Businesses
       </h3>
-    </div>
-  </div>
-
-  <div id="lightbox" class="lightbox">
-    <div class="lightbox__content">
-      <button class="lightbox__close">&times;</button>
-      <div id="hubspot-form-container">
-      </div>
     </div>
   </div>
 
