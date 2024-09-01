@@ -1,14 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Utility function to check if the viewport is mobile
   const isViewportMobile = () => {
-    var viewportWidth = window.innerWidth;
+    const viewportWidth = window.innerWidth;
     return viewportWidth < 768;
   };
 
-  const isMobile = isViewportMobile();
-
-  setTimeout(() => {
-    // TODO replace it with logic to check if all images were loaded
-    const scroll = new LocomotiveScroll({
+  // Function to initialize LocomotiveScroll
+  const initializeLocomotiveScroll = () => {
+    new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]'),
       smooth: true,
       multiplier: 2.5,
@@ -17,8 +16,39 @@ document.addEventListener('DOMContentLoaded', function () {
       lerp: 0.1,
       smoothMobile: true,
     });
-  }, 1000);
+  };
 
+  // Function to check if all images are loaded
+  const checkImagesLoaded = () => {
+    const images = document.querySelectorAll('img');
+    let loadedImagesCount = 0;
+
+    images.forEach((img) => {
+      if (img.complete) {
+        loadedImagesCount++;
+      } else {
+        img.addEventListener('load', () => {
+          loadedImagesCount++;
+          if (loadedImagesCount === images.length) {
+            initializeLocomotiveScroll();
+          }
+        });
+
+        img.addEventListener('error', () => {
+          loadedImagesCount++;
+          if (loadedImagesCount === images.length) {
+            initializeLocomotiveScroll();
+          }
+        });
+      }
+    });
+
+    if (loadedImagesCount === images.length) {
+      initializeLocomotiveScroll();
+    }
+  };
+
+  // Function to initialize the brands slider
   const initBrandsSlider = () => {
     new Splide('#splide', {
       type: 'loop',
@@ -40,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }).mount();
   };
 
+  // Function to initialize the guide slider
   const initGuideSlider = () => {
     new Splide('#guide-slider', {
       type: 'loop',
@@ -55,20 +86,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }).mount();
   };
 
+  // Function to style the HubSpot form
   const styleHubspotForm = () => {
     const formContainer = document.getElementById('hubspot-form-container');
 
     const interval = setInterval(() => {
-      const form = formContainer.querySelector('form'),
-        lightboxContent = document
-          .querySelector('#hubspot-content')
-          .cloneNode(true);
+      const form = formContainer.querySelector('form');
+      const lightboxContent = document
+        .querySelector('#hubspot-content')
+        .cloneNode(true);
 
       if (form) {
-        let formParent = form.parentElement,
-          formSubmitButton = form.querySelector('input[type="submit"]'),
-          emailInput = form.querySelector('input[name="email"'),
-          phoneInput = form.querySelector('input[name="mobilephone"]');
+        const formParent = form.parentElement;
+        const formSubmitButton = form.querySelector('input[type="submit"]');
+        const emailInput = form.querySelector('input[name="email"]');
+        const phoneInput = form.querySelector('input[name="mobilephone"]');
 
         if (formSubmitButton) {
           formSubmitButton.value = 'Get your full guide';
@@ -96,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 100);
   };
 
+  // Function to initialize the HubSpot form and handle the lightbox
   const initHubspotForm = (isMobile) => {
     const openLightbox = isMobile
       ? document.getElementById('open-lightbox-mobile')
@@ -123,13 +156,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  initBrandsSlider();
+  // Main initialization function to orchestrate all initializations
+  const init = () => {
+    const isMobile = isViewportMobile();
 
-  if (isMobile != undefined) {
-    initHubspotForm(isMobile);
+    initBrandsSlider();
+    checkImagesLoaded();
 
-    if (isMobile) {
-      initGuideSlider();
+    if (isMobile !== undefined) {
+      initHubspotForm(isMobile);
+
+      if (isMobile) {
+        initGuideSlider();
+      }
     }
-  }
+  };
+
+  init();
 });
