@@ -86,11 +86,16 @@ header .container {
   font-size: 20px;
 }
 
-.header__nav-link.--solid {
+.header__nav-link--solid {
   color: #fff;
-  background-color: #d1581f;
+  background: linear-gradient(120deg, #d1581f, #d1581f);
   padding: 10px 24px 13px;
   border-radius: 30px;
+}
+
+.header__nav-link--solid:hover,
+.header__nav-link--solid:focus {
+  background: linear-gradient(120deg, #d1581f, #ff9800);
 }
 
 .header__nav-item:last-of-type {
@@ -158,13 +163,18 @@ header .container {
 
 .banner__cta-button {
   color: #fff;
-  background-color: #d1581f;
+  background: linear-gradient(120deg, #d1581f, #d1581f);
   padding: 18px 36px;
   border-radius: 30px;
   line-height: 24.4px;
   font-size: 20px;
   outline: none;
   border: none;
+}
+
+.banner__cta-button:hover,
+.banner__cta-button:focus {
+  background: linear-gradient(120deg, #d1581f, #ff9800);
 }
 
 @media (max-width: 767.98px) {
@@ -504,14 +514,25 @@ header .container {
   color: #fff;
   outline: none;
   border: none;
-  background-color: #d1581f;
+  background: linear-gradient(120deg, #d1581f, #d1581f);
   margin-right: 15px;
+}
+
+.demo__cta--solid:hover,
+.demo__cta--solid:focus {
+  background: linear-gradient(120deg, #d1581f, #ff9800);
 }
 
 .demo__cta--transparent {
   border: 1px solid #181716;
   color: #181716;
-  background-color: #fff;
+  background: #fff;
+}
+
+.demo__cta--transparent:hover,
+.demo__cta--transparent:focus {
+  background: #181716;
+  color: #fff;
 }
 
 .demo img {
@@ -707,6 +728,22 @@ footer {
   color: #d1581f;
   display: inline-block;
   letter-spacing: 0;
+}
+
+@media (max-width: 767.98px) {
+  .lightbox__content {
+    max-width: 75vw;
+    padding: 13px;
+    border-radius: 20px;
+  }
+
+  .hubspot-content__header h3 {
+    font-size: 21px;
+    line-height: 27.3px;
+    max-width: 350px;
+    margin: 10px auto 0;
+    font-family: 'ABC Favorit';
+  }
 }
 
 /** Lightbox - ENDS **/
