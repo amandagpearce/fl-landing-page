@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         480: {
           perPage: 3,
+          speed: 100000,
         },
       },
     }).mount();
