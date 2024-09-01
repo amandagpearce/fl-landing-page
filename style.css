@@ -89,7 +89,10 @@ header .container {
 .header__nav-link--solid {
   color: #fff;
   background: linear-gradient(120deg, #d1581f, #d1581f);
-  padding: 10px 24px 13px;
+  height: 45px;
+  display: block;
+  line-height: 45px;
+  padding: 0 24px;
   border-radius: 30px;
 }
 
@@ -109,6 +112,7 @@ header .container {
 
   .header .row {
     margin: 0;
+    align-items: center;
   }
 
   .header__logo-container img {
@@ -654,7 +658,7 @@ footer {
 
 .lightbox__content #hubspot-form-container form input[type='submit'] {
   color: #fff;
-  background-color: #d1581f;
+  background: linear-gradient(120deg, #d1581f, #d1581f);
   padding: 18px 36px;
   border-radius: 30px;
   line-height: 24.4px;
@@ -665,6 +669,10 @@ footer {
   text-transform: capitalize;
   margin: 30px auto;
   display: table;
+}
+
+.lightbox__content #hubspot-form-container form input[type='submit']:hover {
+  background: linear-gradient(120deg, #d1581f, #ff9800);
 }
 
 #hubspot-form-container form input:not([type='submit']) {
